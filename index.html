@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetCare Plus | Centro Veterinario</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">Vet<span>Care</span>+</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#citas" class="highlight">Reservar</a></li>
+                    <li><a href="#expedientes">Expedientes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h2>Cuidamos a tu <span>mascota</span> como se merece</h2>
+                <p>Servicios veterinarios con amor y profesionalismo</p>
+                <a href="#citas" class="btn btn-primary">Reservar Ahora</a>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="services">
+            <section id="servicios" class="tab-content">
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios-grid" id="lista-servicios">
+        <!-- Servicios se cargarán aquí con JS -->
+    </div>
+</section>
+            <div class="container">
+                <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Consulta General</h3>
+                        <p>Revisión completa y diagnóstico profesional.</p>
+                        <span class="price">$300 MXN</span>
+                    </div>
+                    <!-- Repetir para otros servicios -->
+                </div>
+            </div>
+            <section id="servicios" class="tab-content">
+        </section>
+
+        <!-- Formulario de Citas -->
+        <h2>Gestión de Reservas</h2>
+    <div class="calendar-container">
+        <div id="calendario"></div>
+        <div class="reservas-list" id="lista-reservas">
+            <!-- Reservas se cargarán aquí con JS -->
+        </div>
+    </div>
+</section>
+
+        <section id="reservaciones" class="booking-section">
+    <div class="container">
+        <h2 class="section-title">Agenda una Cita</h2>
+        <form id="form-reservacion" class="booking-form">
+            <!-- Paso 1: Datos de la mascota -->
+            <div class="form-step active" data-step="1">
+                <h3>Datos de la Mascota</h3>
+                <div class="form-group">
+                    <label for="nombre-mascota">Nombre</label>
+                    <input type="text" id="nombre-mascota" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo-mascota">Tipo</label>
+                    <select id="tipo-mascota" required>
+                        <option value="">Seleccione...</option>
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <button type="button" class="btn next-btn">Siguiente</button>
+            </div>
+            <section id="reservas" class="tab-content">
+
+            <!-- Paso 2: Selección de servicio -->
+            <div class="form-step" data-step="2">
+                <h3>Servicio Requerido</h3>
+                <div class="service-options">
+                    <label class="service-card">
+                        <input type="radio" name="servicio" value="consulta" required>
+                        <div class="card-content">
+                            <h4>Consulta General</h4>
+                            <p>Revisión médica completa</p>
+                            <span class="price">$300 MXN</span>
+                        </div>
+                    </label>
+                    <!-- Más opciones... -->
+                </div>
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Anterior</button>
+                    <button type="button" class="btn next-btn">Siguiente</button>
+                </div>
+            </div>
+
+            <!-- Paso 3: Fecha y hora -->
+            <div class="form-step" data-step="3">
+                <h3>Selecciona Fecha y Hora</h3>
+                <div class="form-group">
+                    <label for="fecha-cita">Fecha</label>
+                    <input type="date" id="fecha-cita" min="2023-11-01" required>
+                </div>
+                <div class="time-slots">
+                    <!-- Horarios generados por JS -->
+                </div>
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Anterior</button>
+                    <button type="submit" class="btn submit-btn">Confirmar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+        
+
+        <!-- Expedientes -->
+        <section id="expedientes" class="records">
+            <div class="container">
+                <h2 class="section-title">Expedientes <span>Médicos</span></h2>
+                <div id="lista-expedientes" class="records-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2023 VetCare+ - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <section id="expedientes" class="tab-content">
+    <h2>Expedientes Médicos</h2>
+    <div class="search-bar">
+        <input type="text" id="buscar-mascota" placeholder="Buscar mascota...">
+        <button id="btn-buscar">Buscar</button>
+    </div>
+    <div class="expedientes-grid" id="lista-expedientes">
+        <!-- Expedientes se cargarán aquí con JS -->
+    </div>
+</section>
+<script src="js/expedientes.js"></script>
+<script src="js/reservas.js"></script>
+<script src="js/servicios.js"></script>
+<!-- Añadir después FullCalendar si usas calendario -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+</body>
+
+<!-- Correcto (si están en la misma carpeta) -->
+<link rel="stylesheet" href="estilos.css">
+<img src="imagenes/mascota.jpg">
+
+<!-- Incorrecto (rutas absolutas de tu PC no funcionarán) -->
+<link rel="stylesheet" href="D:/Proyecto computacion Melany Rivas/vetcare/estilos.css">
+</html>
